@@ -9,3 +9,8 @@ body {
     align-items: center;
     margin: 0;
 }
+
+.container {
+    display: flex;
+    width: 90vw;
+}
