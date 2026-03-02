@@ -26,6 +26,7 @@ body {
     flex: 0.5;
     margin: 10px;
     position: relative;
+    transition: flex 1s ease-in;
 }
 
 .panel h3 {
@@ -35,6 +36,7 @@ body {
     font-size: 24px;
     margin: 0px;
     opacity: 0;
+    transition: opacity 1s ease-in 0.5s;
 }
 
 .panel.active {
