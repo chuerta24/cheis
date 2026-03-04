@@ -33,11 +33,14 @@ document.addEventListener('keydown', (event) => {
 })
 
 hoverBox.addEventListener('mouseenter', () => {
-    hoverBox.style.height = "20px"
-    hoverBox.style.width = "100px"
+
+    // hoverBox.style.height = "20px"
+    // hoverBox.style.width = "100px"
 })
 hoverBox.addEventListener('mouseleave', () => {
-    hoverBox.style.height = "60px"
-    hoverBox.style.width = "250px"
+    // hoverBox.style.height = "60px"
+    // hoverBox.style.width = "250px"
 
 })
+
+dblclickBox.addEventListener("dblclick", () =>)
