@@ -24,12 +24,10 @@ y = 0
 s = 0
 
 document.addEventListener('keydown', (event) => {
-    if (event.key == 'ArrowRight') {
-        x = x + 10;
-        moveBox.style.transform = `translate(${x}px, ${y}px)`
-    }
-    if (event.key == 'ArrowUp') {
-        y = y - 10;
-        moveBox.style.transform = `translate(${x}px, ${y}px)`
-    }
+    if (event.key == 'ArrowRight') {x = x + 10}
+    if (event.key == 'ArrowUp') { y = y - 10}
+    if (event.key == 'ArrowLeft') {x = x - 10}
+    if (event.key == 'ArrowDown') { y = y + 10}
+
+    moveBox.style.transform = `translate(${x}px, ${y}px)`
 })
