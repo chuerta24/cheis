@@ -33,7 +33,7 @@ document.addEventListener('keydown', (event) => {
         moveBox.style.transform = `translate(${x}px, ${y}px, ${s}px)`
     }
     if (event.key == 'ArrowDown') {
-        s = s / 10;
+        s = s  10;
         moveBox.style.transform = `translate(${x}px, ${y}px, ${s}px)`
     }
 })
