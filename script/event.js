@@ -4,7 +4,7 @@ moveBox = document.querySelector('.move')
 hoverBox = document.querySelector('.hover')
 dblClick = document.querySelector('.dblclick')
 
-colors = ['blue', 'green', 'purple', 'red', 'white', 'yellow', 'orange', 'pink', 'indigo', ']
+colors = ['blue', 'green', 'purple', 'red', 'white', 'yellow', 'orange', 'pink', 'indigo']
 index = 0
 
 clickBox.addEventListener('click', () => {
@@ -34,12 +34,12 @@ document.addEventListener('keydown', (event) => {
 
 hoverBox.addEventListener('mouseenter', () => {
 
-    // hoverBox.style.height = "20px"
-    // hoverBox.style.width = "100px"
+     hoverBox.style.height = "20px"
+     hoverBox.style.width = "100px"
 })
 hoverBox.addEventListener('mouseleave', () => {
-    // hoverBox.style.height = "60px"
-    // hoverBox.style.width = "250px"
+     hoverBox.style.height = "60px"
+     hoverBox.style.width = "250px"
 
 })
 
