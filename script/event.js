@@ -20,14 +20,20 @@ spinBox.addEventListener('click', () => {
 })
 
 x = 0
+y = 0
+s = 0
 
 document.addEventListener('keydown', (event) => {
     if (event.key == 'ArrowRight') {
         x = x + 10;
-        moveBox.style.transform = `translate(${x}px, ${y}px)`
+        moveBox.style.transform = `translate(${x}px, ${y}px, ${s}px)`
     }
     if (event.key == 'ArrowUp') {
         y = y - 10;
-        moveBox.style.transform = `translate(${x}px, ${y}px)`
+        moveBox.style.transform = `translate(${x}px, ${y}px, ${s}px)`
+    }
+    if (event.key == 'ArrowDown') {
+        s = s - 10;
+        moveBox.style.transform = `translate(${x}px, ${y}px, ${s}px)`
     }
 })
