@@ -40,4 +40,8 @@ hoverBox.addEventListener('mouseleave', () => {
 
 })
 
-//dblclickBox.addEventListener("dblclick", () =>)
+dblClick.addEventListener("dblclick", () => {
+    dblClick.style.transform = "scale(0.5)"
+    dblClick.style.background = "gold"
+    dblClick.textContent = "Secret unlocked!"
+})
