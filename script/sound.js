@@ -8,7 +8,12 @@ for (let i = 0; i < 6; i = i + 1) {
     btn.innerText = sounds[i]
     btn.classList.add('btn')
     btn.addEventListener('click', () => {
+        stopSong()
         document.querySelector(`.${sounds[i]}`).play()
     })
     buttons.appendChild(btn)
+}
+
+function stopSong(){
+    for ()
 }
