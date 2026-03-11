@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bitcount+Prop+Double+Ink:wght@100..900&display=swap');
 
 
 * {
@@ -6,7 +6,7 @@
 }
 
 body {
-    font-family: "Roboto", sans-serif;
+    font-family: "Bitcount Prop Double Ink", system-ui;
     background: rgb(157, 119, 247);
     height: 100vh;
     display: flex;
@@ -16,7 +16,7 @@ body {
 }
 
 .btn {
-    font-family: "Roboto", sans-serif;
+    font-family: "Bitcount Prop Double Ink", system-ui;
     background: purple;
     color: white;
     margin: 1rem;

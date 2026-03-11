@@ -1,6 +1,14 @@
 buttons = document.querySelector('.buttons')
 
-btn = document.createElement('button')
-btn.innerText = "Click Me"
-btn.classList.add('btn')
-buttons.appendChild(btn)
+
+sounds = ['applause', 'boo', 'gasp', 'tada', 'victory', 'wrong']
+
+for (let i = 0; i < 6; i = i + 1) {
+    btn = document.createElement('button')
+    btn.innerText = sounds[i]
+    btn.classList.add('btn')
+    btn.addEventListener('click', () => {
+        document.querySelector(`.${sounds[i]}`).play()
+    })
+    buttons.appendChild(btn)
+}
