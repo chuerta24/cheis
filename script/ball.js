@@ -3,12 +3,12 @@ const windowWidth = window.innerWidth
 
 const ball = document.createElement('div')
 document.body.appendChild(ball)
-const LPaddel = document.createElement('div')
+const LPaddle = document.createElement('div')
 document.body.appendChild(LPaddel)
-let LPaddelWidth = 20
-let LPaddelHeight = 100
-let LPaddelSpeed = 5
-let LPaddelYPosition = windowHeight / 2 - LPaddelHeight / 2
+let LPaddleWidth = 20
+let LPaddleHeight = 100
+let LPaddleSpeed = 5
+let LPaddleYPosition = windowHeight / 2 - LPaddleHeight / 2
 
 const ballRadius = 30
 let ballXPosition = windowWidth/2 - ballRadius
