@@ -4,7 +4,7 @@ const windowWidth = window.innerWidth
 const ball = document.createElement('div')
 document.body.appendChild(ball)
 const LPaddle = document.createElement('div')
-document.body.appendChild(LPaddel)
+document.body.appendChild(LPaddle)
 let LPaddleWidth = 20
 let LPaddleHeight = 100
 let LPaddleSpeed = 5
@@ -61,39 +61,65 @@ function createBall() {
     ball.style.top = `${ballYPosition}px`
     ball.style.left = `${ballXPosition}px`
 }
-createLPaddel()
-function createLPaddel() {
-    LPaddel.style.height = `${LPaddelHeight}px`
-    LPaddel.style.width = `${LPaddelWidth}px`
-    LPaddel.style.backgroundColor = 'blue'
-    LPaddel.style.position = 'absolute'
-    LPaddel.style.left = "50px"
-    LPaddel.style.height = `${LPaddelYPosition}px`
+createLPaddle()
+function createLPaddle() {
+    LPaddle.style.height = `${LPaddleHeight}px`
+    LPaddle.style.width = `${LPaddleWidth}px`
+    LPaddle.style.backgroundColor = 'blue'
+    LPaddle.style.position = 'absolute'
+    LPaddle.style.left = "50px"
+    LPaddle.style.height = `${LPaddleYPosition}px`
 }
-
-LPaddel.addEventListener('keydown', (event)=> {
+wKey = false
+sKey = false
+document.addEventListener('keydown', (event) => {
+    if (event.key == 'w') {
+        wKey = true
+    }
+    if (event.key == 's') {
+        sKey = true
+    }
+})
+document.addEventListener('keyup', (event) => {
+    if (event.key == 'w') {
+        wKey = false
+    }
+    if (event.key == 's') {
+        sKey = false
+    }
+})
+LPaddle.addEventListener('keydown', (event)=> {
     if (event.key == 'w'){
-        if (LPaddelYPosition <= 0) {
-            LPaddelYPosition = 0
+        if (LPaddleYPosition <= 0) {
+            LPaddleYPosition = 0
         }
         else {
-            LPaddelYPosition = LPaddelYPosition - LPaddelSpeed
+            LPaddleYPosition = LPaddleYPosition - LPaddleSpeed
         }
     }
     if (event.key == 's') {
-        if (LPaddelYPosition >= windowHeight - LPaddelHeight){
-            LPaddelYPosition = windowHeight - LPaddelHeight
+        if (LPaddleYPosition >= windowHeight - LPaddleHeight){
+            LPaddleYPosition = windowHeight - LPaddleHeight
         }
         else {
-            LPaddelYPosition = LPaddelYPosition + LPaddelSpeed
+            LPaddleYPosition = LPaddleYPosition + LPaddleSpeed
         }
     }
-    LPaddel.style.top = `${LPaddelYPosition}px`
+    LPaddle.style.top = `${LPaddleYPosition}px`
 })
 
 function animate() {
     moveBall()
-    moveLPaddel()
+    moveLPaddle()
     requestAnimationFrame(animate)
 }
 animate()
+
+function moveLPaddle() {
+    if (wKey == true && LPaddleYPosition > 0) {
+        LPaddleYPosition = LPaddleYPosition - LPaddleSpeed
+    }
+    if (sKey == true && LPaddleYPosition < windowHeight - LPaddleHeight) {
+        LPaddleYPosition = LPaddleYPosition + LPaddleSpeed
+    }
+}
