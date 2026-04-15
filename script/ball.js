@@ -43,18 +43,12 @@ function moveBall(){
         ballXDirection = ballXDirection * -1
     }
 
-
-
-
     let ballTop = ballYPosition
     let ballBottom = ballYPosition + 2 * ballRadius
     let ballLeft = ballXPosition
     let LPaddleTop = LPaddleYPosition
     let LPaddleBottom = LPaddleYPosition + LPaddleHeight
     let LPaddleRight = LPaddleXPosition + LPaddleWidth
-
-
-
 
     if(
         (ballBottom >= LPaddleTop) &&
@@ -65,11 +59,6 @@ function moveBall(){
         ballXDirection = ballXDirection * -1
     }
 }
-
-
-
-
-
 
 createBall()
 function createBall(){
