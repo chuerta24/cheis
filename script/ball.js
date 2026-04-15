@@ -123,4 +123,5 @@ function moveLPaddle() {
     if (sKey == true && LPaddleYPosition < windowHeight - LPaddleHeight) {
         LPaddleYPosition = LPaddleYPosition + LPaddleSpeed
     }
+    LPaddle.style.top = `${LPaddleYPosition}px`
 }
