@@ -155,6 +155,7 @@ function moveRPaddle() {
 function animate() {
     moveBall()
     moveLPaddle()
+    moveRPaddle()
     requestAnimationFrame(animate)
 }
 animate()
