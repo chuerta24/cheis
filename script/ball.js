@@ -2,7 +2,6 @@ const windowHeight = window.innerHeight
 const windowWidth = window.innerWidth
 
 
-//LPaddle Variables
 const LPaddle = document.createElement('div')
 document.body.appendChild(LPaddle)
 let LPaddleWidth = 10
@@ -11,8 +10,15 @@ let LPaddleSpeed = 30
 let LPaddleYPosition = windowHeight / 2 - LPaddleHeight / 2
 let LPaddleXPosition = 70
 
+const RPaddle = document.createElement('div')
+document.body.appendChild(RPaddle)
+let RPaddleWidth = 10
+let RPaddleHeight = 300
+let RPaddleSpeed = 30
+let RPaddleYPosition = windowHeight / 2 - RPaddleHeight / 2
+let RPaddleXPosition = windowWidth - 70
 
-//Ball Variables
+
 const ball = document.createElement('div')
 document.body.appendChild(ball)
 const ballRadius = 30
@@ -23,14 +29,8 @@ let ballXDirection = 1
 let ballYDirection = 1
 
 
-/*let score = 0 // Display the score and increase score by one every time the ball hits the paddle.
-if (ball)
-let level = 1*/ // Display the level and increase the level by one every time the score increases by 10.
-//As the levels increase, increase the ball speed.
-//If the ball gets past your paddle, end the game.
-//Make the ball stop or disappear and then let the user know the game is over.
-//Optional: sound effects, background music
-
+let score = 0
+let level = 1
 
 function moveBall(){
     ballXPosition = ballXPosition + ballSpeed * ballXDirection
@@ -82,6 +82,15 @@ function createLPaddle() {
     LPaddle.style.left = `${LPaddleXPosition}px`
     LPaddle.style.top = `${LPaddleYPosition}px`
 }
+createRPaddle()
+function createRPaddle() {
+    RPaddle.style.height = `${RPaddleHeight}px`
+    RPaddle.style.width = `${RPaddleWidth}px`
+    RPaddle.style.backgroundColor = 'red'
+    RPaddle.style.position = 'absolute'
+    RPaddle.style.left = `${RPaddleXPosition}px`
+    RPaddle.style.top = `${RPaddleYPosition}px`
+}
 
 
 wKey = false
@@ -102,7 +111,26 @@ document.addEventListener('keyup', (event) => {
         sKey = false
     }
 })
+upKey = false
+downKey = false
 
+document.addEventListener('keydown', (event) => {
+    if (event.key == 'ArrowUp') {
+        upKey = true
+    }
+    if (event.key == 'ArrowDown') {
+        downKey = true
+    }
+})
+
+document.addEventListener('keyup', (event) => {
+    if (event.key == 'ArrowUp') {
+        upKey = false
+    }
+    if (event.key == 'ArrowDown') {
+        downKey = false
+    }
+})
 
 function moveLPaddle() {
     if (wKey == true && LPaddleYPosition > 0) {
@@ -113,7 +141,16 @@ function moveLPaddle() {
     }
     LPaddle.style.top = `${LPaddleYPosition}px`
 }
+function moveRPaddle() {
+    if (upKey == true && RPaddleYPosition > 0) {
+        RPaddleYPosition = RPaddleYPosition - RPaddleSpeed
+    }
+    if (downKey == true && RPaddleYPosition < windowHeight - RPaddleHeight) {
+        RPaddleYPosition = RPaddleYPosition + RPaddleSpeed
+    }
 
+    RPaddle.style.top = `${RPaddleYPosition}px`
+}
 
 function animate() {
     moveBall()
