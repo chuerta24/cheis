@@ -29,7 +29,7 @@ body {
     height: 300px;
     width: 300px;
     position: relative;
-    transform: scale(1);
+    /*transform: scale(1);*/
 }
 
 .circle {
@@ -99,7 +99,7 @@ body {
 }
 
 .container.grow {
-    animation: grow 3s linear forwards;
+    animation: grow 3s ease-in-out forwards;
 }
 @keyframes shrink {
     from {
@@ -111,5 +111,5 @@ body {
 }
 
 .container.shrink {
-    animation: shrink 3s linear forwards;
+    animation: shrink 3s ease-in-out forwards;
 }
