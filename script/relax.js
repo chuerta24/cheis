@@ -11,6 +11,7 @@ function breathAnimation() {
     text.innerText = 'Breathe In!'
 
     container.classList.remove('shrink')
+    container.classList.remove('grow')
     void container.offsetWidth
     container.classList.add('grow')
 
@@ -21,6 +22,7 @@ function breathAnimation() {
             text.innerText = 'Breathe Out!'
 
             container.classList.remove('grow')
+            container.classList.remove('shrink')
             void container.offsetWidth
             container.classList.add('shrink')
 
